@@ -26,21 +26,19 @@ class MercadoTest {
 
 	@BeforeEach
 	void setUp() throws Exception {
-		//Creo instancias
-		caja1 = new Caja();
-		
+		// Creo instancias
 		mercadoCentral = new Mercado();
 		
-		leche = new ProductoEmpresa("Leche",300.0f);
-		carne = new ProductoEmpresa("Carne",1300.0f);
-		lechuga = new ProductoCooperativa("Lechuga",200.0f);
-		tomate = new ProductoCooperativa("Toamte ",500.0f);
-		papa = new ProductoCooperativa("Papa ",800.0f);
-			
+		caja1 = new Caja(mercadoCentral);
+
+
+		leche = new ProductoEmpresa("Leche", 300.00);
+		carne = new ProductoEmpresa("Carne", 1300.00);
+		lechuga = new ProductoCooperativa("Lechuga", 200.00); // precio final $180
+		tomate = new ProductoCooperativa("Toamte ", 500.00); // pf $450
+		papa = new ProductoCooperativa("Papa ", 800.00);	//	pf $720
+
 		augusto = new Cliente();
-		
-		//Le asigno el mercado de pertenencia a la caja
-		caja1.setMercadoDePertencia(mercadoCentral);
 
 		// Agrego productos a la lista.
 		productos.add(leche);
@@ -59,21 +57,19 @@ class MercadoTest {
 
 	@Test
 	void test1_UnaCajaRegistraLosProductosQueTieneElCliente() {
-		
+
 		caja1.registrarProductosDe(augusto);
-		
-		assertEquals(caja1.getProductosRegistrados(),augusto.getProductosAdquiridos());
-		
+
+		assertEquals(caja1.getProductosRegistrados(), augusto.getProductosAdquiridos());
+
 	}
 
 	@Test
 	void test2_UnaCajaDevuelveElMontoAPagarDelCliente() {
 		caja1.registrarProductosDe(augusto);
-		
-		assertEquals(2950.0f,caja1.montoTotalProductosRegistrados());
-		
-		
+
+		assertEquals(2950.00, caja1.montoTotalProductosRegistrados());
+
 	}
-	
-	
+
 }

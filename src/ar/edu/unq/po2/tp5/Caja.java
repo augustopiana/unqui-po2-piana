@@ -2,6 +2,7 @@ package ar.edu.unq.po2.tp5;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Caja {
 
@@ -12,9 +13,9 @@ public class Caja {
 
 	// METODOS
 
-	public void setMercadoDePertencia(Mercado unMercado) {
+	public  Caja(Mercado unMercado) {
 		this.mercadoDePertencia = unMercado;
-
+		
 	}
 
 	public List<Producto> getProductosRegistrados() {
@@ -36,12 +37,12 @@ public class Caja {
 		this.productosRegistrados = productosRegistrados;
 	}
 
-	public Float montoTotalProductosRegistrados() {
-		float montoAPagar = 0.0f;
-		for (Producto prod : this.productosRegistrados) {
-			montoAPagar = montoAPagar + prod.getPrecio();
-		}
-		return montoAPagar;
+	public Double montoTotalProductosRegistrados() {
+		double montoTotalProductos = productosRegistrados.stream()
+											             .mapToDouble(p -> p.getPrecio())
+	                                                     .sum();
+		
+		return montoTotalProductos;
 	}
 
 }
