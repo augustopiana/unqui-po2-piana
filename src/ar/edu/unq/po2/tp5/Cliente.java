@@ -6,19 +6,18 @@ import java.util.List;
 public class Cliente {
 
 	// ATRIBUTOS
-
-	private List<Producto> productosAdquiridos = new ArrayList<Producto>();
+	private List<Producto> productos = new ArrayList<Producto>();
 
 	// METODOS
 
 	public List<Producto> getProductosAdquiridos() {
 
-		return productosAdquiridos;
+		return productos;
 
 	}
 
-	public void setProducto(List<Producto> productos) {
-		this.productosAdquiridos = productos;
+	public void setProductos(List<Producto> productos) {
+		this.productos = productos;
 
 	}
 

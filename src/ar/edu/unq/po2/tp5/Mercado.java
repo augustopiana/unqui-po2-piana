@@ -10,21 +10,20 @@ public class Mercado {
 	
 	
 	// METODOS
-
-	public void setStock(List<Producto> nuevoStock) {
-		this.stock.addAll(nuevoStock);
+	public void setStock(List<Producto> productos) {
+		this.stock.addAll(productos);
 	}
 
-	public void darDeBajaStock(List<Producto> productosDadosDeBaja) {
-		for (Producto prod: productosDadosDeBaja) {
+	public void darDeBajaStock(List<Producto> list) {
+		for (Pagable prod: list) {
 			
 			this.darDeBajaProducto(prod);
 			
 		}
 	}
 
-	private void darDeBajaProducto(Producto prod) {
-		this.stock.remove(prod);
+	private void darDeBajaProducto(Pagable prod) {
+		this.stock.remove(prod);	
 		
 	}
 

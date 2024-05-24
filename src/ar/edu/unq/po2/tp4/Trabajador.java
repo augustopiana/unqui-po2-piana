@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Trabajador {
 
+	@SuppressWarnings("unused")
 	private Integer montoImponible;
 	private List<Ingreso> ingresosPercibidos = new ArrayList<Ingreso>();
 

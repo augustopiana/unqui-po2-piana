@@ -3,7 +3,9 @@ package ar.edu.unq.po2.tp4;
 public class Ingreso {
 	
 	
+	@SuppressWarnings("unused")
 	private Integer mesPercepcion;
+	@SuppressWarnings("unused")
 	private String concepto;
 	private Integer montoPercibido;
 	

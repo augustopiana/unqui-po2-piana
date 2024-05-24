@@ -2,7 +2,6 @@ package ar.edu.unq.po2.tp5;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
 
 public class Caja {
 
@@ -24,8 +23,8 @@ public class Caja {
 	}
 
 	public void registrarProductosDe(Cliente unCliente) {
-		mercadoDePertencia.darDeBajaStock(unCliente.getProductosAdquiridos()); // Le avisamos al mercado que de debaja
-																				// en stock la lista de productos
+		mercadoDePertencia.darDeBajaStock(unCliente.getProductosAdquiridos());  // Le avisamos al mercado que de debaja
+																			    // en stock la lista de productos
 																				// adquiridos del cliente.
 
 		this.setProductosRegistrados(unCliente.getProductosAdquiridos()); // Registramos productos en la caja

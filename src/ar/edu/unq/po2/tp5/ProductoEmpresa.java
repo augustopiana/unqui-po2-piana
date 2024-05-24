@@ -12,4 +12,10 @@ public class ProductoEmpresa extends Producto {
 		return this.precio;
 	}
 
+	@Override
+	public void registrarPago() {
+		// avisarle al mercado que de debaja.
+		
+	}
+
 }

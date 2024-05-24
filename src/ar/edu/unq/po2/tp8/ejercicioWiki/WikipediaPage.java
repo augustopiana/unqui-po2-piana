@@ -1,4 +1,4 @@
-package ar.edu.unq.po2.tp8;
+package ar.edu.unq.po2.tp8.ejercicioWiki;
 
 import java.util.List;
 import java.util.Map;
@@ -53,8 +53,11 @@ public class WikipediaPage implements IWikipediaPage {
 		return links.stream().anyMatch(l -> l.equals(this));
 	}
 
+	@SuppressWarnings("unchecked")
 	public boolean tienePropiedadEnComun(WikipediaPage page) {
+	
 		List<String> clavesPropias = (List<String>) this.getInfobox().keySet();
+
 		List<String> clavesParaComparar = (List<String>) page.getInfobox().keySet();
 		
 		return clavesParaComparar.stream().anyMatch(c -> clavesPropias.contains(c));
