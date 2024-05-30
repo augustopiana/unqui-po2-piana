@@ -21,12 +21,10 @@ class PointTestCase {
 	public void test1_UnPointPuedeSerCreadoEnUnEjeXeY() {
 		
 		Point point = new Point(10,15);
-		int ejex = 10;
-		int ejey = 15;
 		
 		
-		assertEquals(ejex , 10);
-		assertEquals(ejey, 15);
+		assertEquals(point.getEjeX() , 10);
+		assertEquals(point.getEjeY(), 15);
 		
 		
 	}

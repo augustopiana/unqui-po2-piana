@@ -12,6 +12,7 @@ class MercadoTest {
 
 	Mercado mercadoCentral;
 
+
 	Caja caja1;
 
 	ProductoEmpresa leche;
@@ -19,7 +20,7 @@ class MercadoTest {
 	ProductoCooperativa papa;
 	ProductoCooperativa tomate;
 	ProductoCooperativa lechuga;
-
+	
 	Cliente augusto;
 
 	List<Producto> productos = new ArrayList<Producto>();
@@ -28,16 +29,16 @@ class MercadoTest {
 	void setUp() throws Exception {
 		// Creo instancias
 		mercadoCentral = new Mercado();
-		
+					
 		caja1 = new Caja(mercadoCentral);
 
 
 		leche = new ProductoEmpresa("Leche", 300.00);
 		carne = new ProductoEmpresa("Carne", 1300.00);
 		lechuga = new ProductoCooperativa("Lechuga", 200.00); // precio final $180
-		tomate = new ProductoCooperativa("Toamte ", 500.00); // pf $450
+		tomate = new ProductoCooperativa("Tomate ", 500.00); // pf $450
 		papa = new ProductoCooperativa("Papa ", 800.00);	//	pf $720
-
+		
 		augusto = new Cliente();
 
 		// Agrego productos a la lista.
@@ -50,15 +51,15 @@ class MercadoTest {
 		// Agrego productos a stock
 		mercadoCentral.setStock(productos);
 
-		// El cliente adquiere productos
-		augusto.setProducto(productos);
+		// Se le setean los pagables a el cliente
+		augusto.setProductos(productos);
 
 	}
 
 	@Test
 	void test1_UnaCajaRegistraLosProductosQueTieneElCliente() {
 
-		caja1.registrarProductosDe(augusto);
+		caja1.registrarProductosDe(augusto); // Registro productos del cliente 
 
 		assertEquals(caja1.getProductosRegistrados(), augusto.getProductosAdquiridos());
 
@@ -71,5 +72,8 @@ class MercadoTest {
 		assertEquals(2950.00, caja1.montoTotalProductosRegistrados());
 
 	}
+	
+	
+	
 
 }

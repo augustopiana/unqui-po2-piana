@@ -1,4 +1,4 @@
-package ar.edu.unq.po2.tp8;
+package ar.edu.unq.po2.tp8.empleados;
 
 public class EmpleadoPlanta extends Empleado{
 	
